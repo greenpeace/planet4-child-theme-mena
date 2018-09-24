@@ -1,0 +1,35 @@
+{
+	"name": "greenpeace/planet4-child-theme-mena",
+	"description": "Child theme for the Mena website of the Planet 4 Wordpress project",
+	"type":"wordpress-theme",
+	"minimum-stability" : "stable",
+	"authors": [
+		{
+			"name": "Konstantinos Kokkorogiannis",
+			"email": "kkokkoro@greenpeace.org"
+		}
+	],
+	"license": "GPL-3.0+",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/greenpeace/planet4-child-theme-mena/issues",
+		"wiki": "https://github.com/greenpeace/planet4-child-theme-mena/wiki",
+		"source": "https://github.com/greenpeace/planet4-child-theme-mena"
+	},
+	"extra": {
+		"installer-paths": {
+			"../../plugins/{$name}/": [
+				"wpackagist-plugin/*",
+				"type:wordpress-plugin"
+			]
+		}
+	},
+	"require": {
+		"wpackagist-plugin/timber-library": "1.7.*"
+	}
+}
