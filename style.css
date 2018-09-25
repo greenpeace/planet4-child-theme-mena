@@ -12,7 +12,4 @@ Tags: light, accessibility-ready
 Text Domain: planet4-child-theme-mena
 */
 
-/*
-	Display which theme is active right now in bottom right corner
-	See also planet4-child-theme-mena. Feel free to drop or hide display
-*/
+@import 'css/typography.css';
