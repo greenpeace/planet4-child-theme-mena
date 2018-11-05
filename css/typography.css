@@ -2,14 +2,12 @@
   font-family: 'Lora';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/NotoSans-Regular.woff') format('woff'),
-    url('../fonts/NotoSans-Regular.woff2') format('woff2');
+  src: url('../fonts/NotoSans-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Lora';
   font-style: normal;
   font-weight: 700;
-  src: url('../fonts/NotoSans-Bold.woff') format('woff'),
-    url('../fonts/NotoSans-Bold.woff') format('woff2');
+  src: url('../fonts/NotoSans-Bold.woff') format('woff');
 }
