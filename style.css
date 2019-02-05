@@ -13,12 +13,3 @@ Text Domain: planet4-child-theme-mena
 */
 
 @import 'css/typography.css';
-
-.usabilla__overlay {
-  width: 100% !important;
-  left: 0 !important;
-}
-
-.usabilla__overlay > iframe {
-  width: 100% !important;
-}
