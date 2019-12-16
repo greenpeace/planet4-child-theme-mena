@@ -1,0 +1,3 @@
+.country-list, .country-dropdown-toggle, .gp-year {
+  text-transform: lowercase !important;
+}
