@@ -1,0 +1,5 @@
+html[dir="rtl"] .btn,
+html[dir="rtl"] .wp-block-button a,
+html[dir="rtl"] .wp-block-file .wp-block-file__button {
+  font-weight: normal !important;
+}
