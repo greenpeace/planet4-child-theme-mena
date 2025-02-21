@@ -4,7 +4,7 @@
  * Additional code for the child theme goes in here.
  */
 function add_inline_script_for_specific_page() {
-    if (is_page('your-page-slug')) { // Replace 'your-page-slug' with the actual slug or ID
+    if (is_page('https://ummah4earth.org/ar/')) { // Replace 'your-page-slug' with the actual slug or ID
         ?>
         <script>
             <!-- Fundraise Up: the new standard for online giving -->
