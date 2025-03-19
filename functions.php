@@ -11,9 +11,3 @@ function enqueue_child_styles() {
 
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [], $css_creation );
 }
-
-// Use arabic analyzer when needed.
-// Ref: https://github.com/10up/ElasticPress/issues/1132
-add_filter('ep_analyzer_language', static function (): string {
-	return 'arabic';
-});
