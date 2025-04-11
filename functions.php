@@ -16,4 +16,5 @@ function enqueue_child_styles() {
 // Ref: https://github.com/10up/ElasticPress/issues/1132
 add_filter( 'ep_analyzer_language', static function (): string {
 	return 'arabic';
+	require_once get_stylesheet_directory() . '/inc/hooks/meta-hooks.php';
 } );
