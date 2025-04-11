@@ -5,6 +5,7 @@
  */
 
 add_action( 'wp_enqueue_scripts', 'enqueue_child_styles', 99);
+wp-content/themes/planet4-child-theme-mena/functions.php-
 
 function enqueue_child_styles() {
 	$css_creation = filectime(get_stylesheet_directory() . '/style.css');
