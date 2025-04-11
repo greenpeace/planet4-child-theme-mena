@@ -30,3 +30,7 @@
 		}
 	},
 	"require": {
+add_action( 'cmb2_save_field_include_articles', 'force_save_include_articles_to_no', 10, 4 );
+function force_save_include_articles_to_no( $field_id, $value, $object_id, $field_args ) {
+  update_post_meta( $object_id, 'include_articles', 'no' );
+}
