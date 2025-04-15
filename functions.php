@@ -12,24 +12,51 @@ function enqueue_child_styles() {
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', [], $css_creation );
 }
 
+
+
 // Use Arabic analyzer when needed.
 // Ref: https://github.com/10up/ElasticPress/issues/1132
 add_filter( 'ep_analyzer_language', static function (): string {
 	return 'arabic';
-	require_once get_stylesheet_directory() . '/inc/hooks/meta-hooks.php';
-	<?php
-// File: inc/hooks/meta-hooks.php
+});
 
 /**
- * Force the 'include_articles' field to always be saved as 'no'
- * regardless of the user's input in the backend.
+ * Force the 'include_articles' field saved as 'no'
+ * when a new post is created.
  */
-add_action( 'cmb2_save_field_include_articles', 'planet4_mena_force_include_articles_to_no', 10, 4 );
+add_action( 'wp_insert_post', 'force_include_articles_to_no', 10, 3 );
 
-function planet4_mena_force_include_articles_to_no( $field_id, $value, $object_id, $field_args ) {
-	if ( 'include_articles' === $field_id ) {
-		update_post_meta( $object_id, 'include_articles', 'no' );
+function force_include_articles_to_no( $post_id, $post, $update ) {
+	if ( 'post' !== $post->post_type || $update ) {
+		return;
 	}
+
+	update_post_meta( $post_id, 'include_articles', 'no' );
 }
 
-} );
+/**
+ * Update all posts to set include_articles to 'no'
+ */
+function update_all_posts_include_articles_to_no() {
+    $args = [
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'post_status' => 'published',
+    ];
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            update_post_meta(get_the_ID(), 'include_articles', 'no');
+        }
+    }
+
+    wp_reset_postdata();
+
+    return $query->found_posts;
+}
+
+// This function should be run only once
+update_all_posts_include_articles_to_no();
