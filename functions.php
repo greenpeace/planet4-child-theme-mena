@@ -33,30 +33,3 @@ function force_include_articles_to_no( $post_id, $post, $update ) {
 
 	update_post_meta( $post_id, 'include_articles', 'no' );
 }
-
-/**
- * Update all posts to set include_articles to 'no'
- */
-function update_all_posts_include_articles_to_no() {
-    $args = [
-        'post_type' => 'post',
-        'posts_per_page' => -1,
-        'post_status' => 'published',
-    ];
-
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            update_post_meta(get_the_ID(), 'include_articles', 'no');
-        }
-    }
-
-    wp_reset_postdata();
-
-    return $query->found_posts;
-}
-
-// This function should be run only once
-update_all_posts_include_articles_to_no();
