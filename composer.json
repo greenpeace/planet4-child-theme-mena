@@ -26,7 +26,7 @@
 			"../../plugins/{$name}/": [
 				"wpackagist-plugin/*",
 				"type:wordpress-plugin"
-	
 			]
 		}
-	},
+	}
+}
